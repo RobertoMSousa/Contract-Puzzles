@@ -12,6 +12,17 @@ describe('Game5', function () {
     const { game } = await loadFixture(deployContractAndSetVariables);
 
     // good luck
+    // const [owner, address1, address2, address3] = await ethers.getSigners();
+    // console.log("🚀  roberto --  ~ owner:", owner.address)
+    // console.log("🚀  roberto --  ~ address1:", address1.address)
+    // console.log("🚀  roberto --  ~ address2:", address2.address)
+    // console.log("🚀  roberto --  ~ address3:", address3.address)
+
+    await network.provider.request({
+      method: "hardhat_impersonateAccount",
+      params: ["0x00FfFFfFFFfFFFFFfFfFfffFFFfffFfFffFfFFFf"],
+    });
+  
 
     await game.win();
 
